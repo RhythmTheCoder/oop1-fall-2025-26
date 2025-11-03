@@ -1,0 +1,27 @@
+import.java.util.Scanner;
+
+public class ScoreCalc {
+    public static void main(String[] args) {
+        System.out.println("Score Calculator");
+
+        Scanner scanner = new Scanner(System.in);
+
+        int score1, score2, score3;
+        double average;
+
+        System.out.print(x:"Enter scores of first student: ");
+        int score1 = scanner.nextInt();
+
+        System.out.print(x:"Enter scores of second student: ");
+        int score2 = scanner.nextInt();
+
+        System.out.print(x:"Enter scores of third student ");
+        int score3 = scanner.nextInt();
+
+        average = (score1 + score2+ score3)/3
+        
+        System.out.printf("Average Score: "%.2f, average);
+
+        input.close();
+    }
+}

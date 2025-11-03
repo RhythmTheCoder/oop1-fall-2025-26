@@ -1,0 +1,12 @@
+public class DiscountPrice {
+    public static void main(String[] args){
+        double price = 250.0;
+
+        double discount = 15.0;
+
+        double finalPrice = price - (price * discount / 100);
+
+        System.out.printf("final price after discount: $" + finalPrice);
+    
+    }
+}

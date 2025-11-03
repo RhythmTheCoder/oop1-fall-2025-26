@@ -1,0 +1,25 @@
+import.java.util.Scanner;
+
+public.class SwapIntegers {
+    public static void main(String[] args){
+        Scanner input = new Scanner(system.in);
+
+        System.out.print("Enter first integer");
+        int a = scanner.nextInt;
+
+        System.out.print("Enter second integer");
+        int b = scanner.nextInt;
+
+        a= a + b;
+        b= a - b;
+        a= a - b;
+
+        System.out.printIn("After Swapping");
+
+        System.out.printIn("First Integer: " + a);
+
+        System.out.printIn("Second Integer: " + b);
+
+        input.close;
+    }
+}
