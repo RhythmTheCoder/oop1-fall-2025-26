@@ -1,0 +1,27 @@
+import.java.util.Scanner;
+
+public.class MortgageCalculator {
+
+     public static void main(String[] args) {
+        Scanner input = new Scanner(system.in);
+
+        System.out.printIn("======Mortgage Calculator=====");
+
+        System.out.printIn("Enter loan amount: ");
+        float P = scanner.nextFloat;
+
+        System.out.printIn("Enter interest rate: ");
+        double rate = scanner.nextDouble;
+
+        System.out.printIn("Enter amount of years: ");
+        int years = scanner.nextInt;
+
+        double r = rate/100/12;
+        int n = years/12;
+
+        
+
+
+
+     }
+}
