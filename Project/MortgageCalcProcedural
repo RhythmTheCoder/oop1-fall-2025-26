@@ -1,0 +1,58 @@
+import.java.util.Scanner;
+
+public class MortgageCalcProcedural {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double salary = 0;
+        int creditScore = 0;
+        boolean criminalRecord = false;
+
+        System.out.print("Enter monthly salary: ");
+        while (!scanner.hasNextDouble()) {
+            System.out.println("Invalid. Enter a numeric value.");
+            scanner.next();
+            System.out.print("Enter monthly salary: ");
+        }
+        salary = scanner.nextDouble();
+
+        System.out.print("Enter credit score (0 - 500): ");
+        creditScore = scanner.nextInt();
+
+        if (creditScore < 0 || creditScore > 500) {
+            System.out.println("Credit score must be between 0 to 500.");
+            System.out.print("Enter credit score (0 - 500): ");
+            creditScore = scanner.nextInt();
+        }
+
+        System.out.print("Do you have criminal record? (true/false): ");
+        criminalRecord = scanner.nextBoolean();
+
+        System.out.println();
+
+        if (creditScore >= 300 && criminalRecord == false) {
+            System.out.println("You are eligible for loan.");
+
+            System.out.print("Enter loan amount: ");
+            double loanAmount = scanner.nextDouble();
+
+            System.out.print("Enter annual interest rate (%): ");
+            double rate = scanner.nextDouble();
+
+            System.out.print("Enter number of years: ");
+            int years = scanner.nextInt();
+
+            double r = rate / 100 / 12;
+            int n = years * 12;
+
+            double M = loanAmount * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+
+            System.out.println("Your monthly mortgage payment is: " + M);
+        } else {
+            System.out.println("Sorry, you are not eligible for a loan.");
+            System.out.println("Reason: You must have a good credit score (≥300) and no criminal record.");
+        }
+
+        scanner.close();
+    }
+}
