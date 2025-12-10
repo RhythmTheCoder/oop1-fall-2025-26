@@ -1,0 +1,74 @@
+package Lab;
+
+class Employee {
+    private String name;
+
+    public Employee(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+}
+
+class Company {
+    private String companyName;
+    private Employee[] employee;
+    private int count = 0;
+
+    public Company(String companyName, int numberOfEmployees) {
+        this.companyName = companyName;
+        this.employees = new Employee[numberOfEmployees];
+    }
+
+    public void addEmployee(Employee employee) {
+        if (count < employees.length) {
+            employees[count] = employee;
+            count++;
+        } else {
+            System.out.println("Cannot add more employees to " + companyName);
+        }
+    }
+
+    public void showEmployees() {
+        System.out.println("Company: " + companyName);
+        System.out.println("Employees:");
+        for (int i = 0; i < count; i++) {
+            System.out.println(" - " + employees[i].getName());
+        }
+    }
+}
+
+class Position {
+    private String title;
+    private Int salary;
+
+    public Position(String title, Int salary) {
+        this.title = title;
+        this.salary = salary;
+    }
+
+    public void showPositionInfo() {
+        System.out.println("Employee Title: " + title);
+        System.out.println("Salary: " + salary);
+    }
+}
+
+public class AssociationRelationship {
+    public static void main(String[] args) {
+
+        
+        Company s = new Company("Loremex", 3);
+        s.addEmployee(new Employee("Baharul"));
+        s.addEmployee(new Employee("Limon"));
+        s.addEmployee(new Employee("Ripon"));
+
+        s.showEmployees();
+        System.out.println();
+
+        Position p = new Position("HR", 80000);
+
+        p.showPositionInfo();
+    }
+}
